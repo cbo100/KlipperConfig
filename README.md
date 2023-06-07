@@ -17,7 +17,7 @@ Seems to be defaults:
 - atmega2560
 - 16Mhz
 - 250000 baud
-- TODO: Enable GPIO at startup for hotend fans
+- Enable GPIO at startup for hotend fans
     - AR9,AR7
 
 ```
