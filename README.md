@@ -41,3 +41,7 @@ https://www.klipper3d.org/Config_Reference.html
 https://github.com/tispokes/klipper_on_SWX1
 https://docs.arduino.cc/hacking/hardware/PinMapping2560
 https://www.klipper3d.org/Config_checks.html
+
+## Mainsail Config
+
+https://docs.mainsail.xyz/overview/quicktips/slicer-upload
