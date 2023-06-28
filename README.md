@@ -49,6 +49,8 @@ Acceleration: 3000 might have been high
 Vref = I x 8 x R
 1.02 = I x 8 x 0.08
 
+1.02 = 1.3 x 8 x 0.1
+
 Vref
 1.02V = 1.6 A
 
