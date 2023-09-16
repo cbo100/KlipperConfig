@@ -116,9 +116,9 @@ A mix of configs, trying to use github to manage all via moonraker conf
 mkdir ~/custom/
 cd custom
 git clone https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
-ln -s ./Klipper-Adaptive-Meshing-Purging/Configuration/ ~/printer_data/config/KAMP
+ln -s ~/custom/Klipper-Adaptive-Meshing-Purging/Configuration/ ~/printer_data/config/KAMP
 git clone https://github.com/cbo100/KlipperConfig.git
-ln -s ./KlipperConfig/ ~/printer_data/config/SidewinderX1
+ln -s ~/custom/KlipperConfig/ ~/printer_data/config/SidewinderX1
 ```
 
 ``` ini (printer.cfg)
@@ -131,20 +131,20 @@ path: ~/printer_data/gcodes
 ```
 
 ``` ini (moonraker.conf)
- [update_manager Klipper-Adaptive-Meshing-Purging]
- type: git_repo
- channel: dev
- path: ~/custom/Klipper-Adaptive-Meshing-Purging
- origin: https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
- managed_services: klipper
- primary_branch: main
+[update_manager Klipper-Adaptive-Meshing-Purging]
+type: git_repo
+channel: dev
+path: ~/custom/Klipper-Adaptive-Meshing-Purging
+origin: https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+managed_services: klipper
+primary_branch: main
 
- [update_manager SidewinderX1-Config]
- type: git_repo
- channel: dev
- path: ~/custom/KlipperConfig
- origin: https://github.com/cbo100/KlipperConfig
- managed_services: klipper
- primary_branch: main
+[update_manager SidewinderX1-Config]
+type: git_repo
+channel: dev
+path: ~/custom/KlipperConfig
+origin: https://github.com/cbo100/KlipperConfig
+managed_services: klipper
+primary_branch: main
 
 ```
