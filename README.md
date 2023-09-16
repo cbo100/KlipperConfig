@@ -106,3 +106,45 @@ END_PRINT
 
 SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}
 ```
+
+
+### Revised Setup Instructions...
+
+A mix of configs, trying to use github to manage all via moonraker conf
+
+``` shell
+mkdir ~/custom/
+cd custom
+git clone https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+ln -s ./Klipper-Adaptive-Meshing-Purging/Configuration/ ~/printer_data/config/KAMP
+git clone https://github.com/cbo100/KlipperConfig.git
+ln -s ./KlipperConfig/ ~/printer_data/config/SidewinderX1
+```
+
+``` ini (printer.cfg)
+[include mainsail.cfg]
+[include timelapse.cfg]
+[include ./SidewinderX1/SidewinderX1.cfg]
+
+[virtual_sdcard]
+path: ~/printer_data/gcodes
+```
+
+``` ini (moonraker.conf)
+ [update_manager Klipper-Adaptive-Meshing-Purging]
+ type: git_repo
+ channel: dev
+ path: ~/custom/Klipper-Adaptive-Meshing-Purging
+ origin: https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+ managed_services: klipper
+ primary_branch: main
+
+ [update_manager SidewinderX1-Config]
+ type: git_repo
+ channel: dev
+ path: ~/custom/KlipperConfig
+ origin: https://github.com/cbo100/KlipperConfig
+ managed_services: klipper
+ primary_branch: main
+
+```
