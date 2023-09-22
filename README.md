@@ -113,6 +113,7 @@ SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}
 A mix of configs, trying to use github to manage all via moonraker conf
 
 ``` shell
+# Setup repo folders:
 mkdir ~/custom/
 cd custom
 git clone https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
@@ -120,6 +121,8 @@ ln -s ~/custom/Klipper-Adaptive-Meshing-Purging/Configuration/ ~/printer_data/co
 git clone https://github.com/cbo100/KlipperConfig.git
 ln -s ~/custom/KlipperConfig/ ~/printer_data/config/SidewinderX1
 ```
+
+Replace `printer.cfg`:
 
 ``` ini (printer.cfg)
 [include mainsail.cfg]
@@ -129,6 +132,8 @@ ln -s ~/custom/KlipperConfig/ ~/printer_data/config/SidewinderX1
 [virtual_sdcard]
 path: ~/printer_data/gcodes
 ```
+
+Add to `moonraker.conf`:
 
 ``` ini (moonraker.conf)
 [update_manager Klipper-Adaptive-Meshing-Purging]
